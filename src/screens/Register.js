@@ -7,6 +7,9 @@ import {
   FaBars,
   FaTimes,
 } from "react-icons/fa";
+import {
+  BrowserRouter, Routes, Route, Link
+} from "react-router-dom";
 import { FiLogOut } from "react-icons/fi";
 import Eye from '../assets/Eye';
 import EyeClose from '../assets/EyeClose';
@@ -50,7 +53,7 @@ export default function Login() {
               Sign up
             </div>
             <div className='flex justify-center items-center mt-2 flex-col'>
-              <div className='flex'>Already have an Account? <div to={'/login'} className='ml-2 text-blue-700 cursor-pointer'>Login</div></div>
+              <div className='flex'>Already have an Account? <Link to ='/login'> <div to={'/login'} className='ml-2 text-blue-700 cursor-pointer'>Login</div> </Link></div>
               <div className='mt-2 px-8 text-center'>By continuing, you agree to accept our Privacy Policy & Terms of Service.</div>
             </div>
           </div>

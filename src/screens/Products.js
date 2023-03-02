@@ -16,6 +16,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import {getImagePath} from '../utils'
 import { addProduct } from '../store/productSlice';
+
 import { useSelector, useDispatch} from 'react-redux';
 
 function App() {
@@ -35,6 +36,8 @@ function App() {
   const onAddProduct = (products) => ()=>{
     dispatch (addProduct(products))
 ;  };
+
+
 
 
 
@@ -184,14 +187,14 @@ function App() {
           </div>
 
           {/* item */}
-          <div className='flex flex-wrap overflow-auto mt-4 -mr-10' style={{ height: 'calc(100vh - 16rem)' }}>
+          <div  className='flex flex-wrap overflow-auto mt-4 -mr-10' style={{ height: 'calc(100vh - 16rem)' }}>
             {productList.map(e => {
               return (
-              <div className='mr-12 mb-12' style={{ width: 'calc(25% - 48px)' }}>
+              <div  className='mr-12 mb-12' style={{ width: 'calc(25% - 48px)' }}>
                 <div className="relative">
                   {/* <img src={require(`../assets/images/${e.image}`)} alt={e.title} className='object-cover h-48 w-full' /> */}
                   <img src={getImagePath(e.image)} alt={e.title} className='object-cover h-48 w-full' />
-                  <div className="wrap-heart">
+                  <div  className="wrap-heart">
                     <Heart />
                   </div>
                 </div>

@@ -4,6 +4,9 @@ const initialState = {
   productList: []
 };
 
+
+
+
 export const productSlice = createSlice({
   name: "product",
   initialState,
@@ -14,11 +17,12 @@ export const productSlice = createSlice({
     },
      removeCart: (state, action) => {
        console.log("action", action.payload);
-       state.productList = [...state.productList, action.payload];     }
+       const dataRemove = state.productList.filter(el => el.id !== action.payload.id)
+       state.productList = dataRemove;   
+       },
   }
 });
 
-export const { addProduct } = productSlice.actions;
-export const { removeCart } = productSlice.actions;
+export const { removeCart, addProduct } = productSlice.actions;
 
 export default productSlice.reducer;

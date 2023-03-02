@@ -9,9 +9,12 @@ import Routers from "./Routers";
 // import reducer
 import producReducer from "./store/productSlice";
 
+import wistlistReducer from "./store/wistlistSlice";
+
 export const store = configureStore({
   reducer: {
-    product: producReducer
+    product: producReducer,
+    wistlist: wistlistReducer,
   }
 });
 
